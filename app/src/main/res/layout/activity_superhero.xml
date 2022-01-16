@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".view.Superhero">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/ivPhotoSuperhero"
+                android:layout_width="130dp"
+                android:layout_height="160dp"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/identifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Identificador : 10"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvfullNameInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre real"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvnameInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Ironman"
+                    android:layout_gravity=""
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:layout_marginStart="8dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/containerInfo"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Biography"
+                  android:layout_gravity="center"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Name"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+
+              <TextView
+                  android:id="@+id/tvfn"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Nombre completo"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Alter-egos"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvEgos"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="No alter egos found"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Aliases"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvAliases"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="My list aliases"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Firts Appareance"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvFirstApp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="No data"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Place-of-birth"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvBirth"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="No data"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Publisher"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvPublisher"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="My Publisher"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Alignment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvAlignment"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="My Publisher"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+
+              <TextView
+                  android:layout_marginTop="16dp"
+                  android:text="Appareance"
+                  android:layout_gravity="center"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Gender"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvGender"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Male"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Race"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvRace"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Height"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvHeight"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Weight"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvWeight"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Eye Color"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvEyeColor"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Hair Color"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvHairColor"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+
+              <TextView
+                  android:layout_marginTop="16dp"
+                  android:text="Work"
+                  android:layout_gravity="center"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Ocupation"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvOcupation"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Base"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvBase"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="16dp"
+                  android:text="Connections"
+                  android:layout_gravity="center"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Group-affiliation"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvGroupAffiliation"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+              <TextView
+                  android:layout_marginTop="8dp"
+                  android:text="Relatives"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp" />
+
+              <TextView
+                  android:id="@+id/tvRelatives"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  tools:text="Human"
+                  android:textSize="18sp"
+                  android:textStyle="italic"
+                  android:layout_marginStart="6dp"
+                  android:layout_marginTop="6dp"/>
+
+          </LinearLayout>
+
+
+       </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
