@@ -15,7 +15,6 @@ class SuperheroViewModel: ViewModel() {
     val isBusy = MutableLiveData<Boolean>()
     private val service = SuperheroService()
 
-
     fun onCreate(x: Int, pageSize: Int){
         resultHeroes.clear()
         viewModelScope.launch {
