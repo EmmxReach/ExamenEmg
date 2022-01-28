@@ -9,9 +9,9 @@ class SuperheroService {
 
     suspend fun getSuperheroById(id: Int): SuperheroModel? {
          return withContext(Dispatchers.IO){
-             val call = RetrofitHelper.instance.getSuperHeroById("$id");
+             val call = RetrofitHelper.instance.getSuperHeroById("$id")
              if (call.isSuccessful){
-                 call.body()  //Retornar la response
+                 call.body()  //return response
              }
              else
                 null

@@ -16,7 +16,6 @@ data class SuperheroModel(
 ) : Serializable
 {
     class Powerstats(
-        val intelligence: String,
         val strength: String,
         val speed: String,
         val durability: String,

@@ -1,15 +1,14 @@
 package com.example.examenemg.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.examenemg.adapter.SuperHerosAdapter
+import com.example.examenemg.adapter.SuperHeroesAdapter
 import com.example.examenemg.databinding.ActivityMainBinding
 import com.example.examenemg.interfaces.ItemClickListener
 import com.example.examenemg.model.SuperheroModel
@@ -19,13 +18,13 @@ import java.io.Serializable
 class MainActivity : AppCompatActivity(), ItemClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: SuperHerosAdapter
+    private lateinit var adapter: SuperHeroesAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private val superheroViewModel: SuperheroViewModel by viewModels()
     private val herosList = mutableListOf<SuperheroModel>()
 
     private var x = 1
-    private var pageSize = 10;
+    private var pageSize = 10
     private var isBusy = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         setContentView(binding.root)
         initRecycler()
         superheroViewModel.onCreate(x, pageSize)
-        superheroViewModel.isBusy.observe(this, Observer { value -> binding.loader.isVisible = value })
+        superheroViewModel.isBusy.observe(this, { value -> binding.loader.isVisible = value })
         superheroViewModel.superheros.observe(this, { value -> updateRecycler(value) } )
 
         binding.rvSuperhero.addOnScrollListener(object: RecyclerView.OnScrollListener(){
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
                     if (visibleItem == adapter.itemCount){
                         if (!isBusy){
                             isBusy = true
-                            pageSize = pageSize + 10
+                            pageSize += 10
                             x = pageSize - 9
                             superheroViewModel.onCreate(x, pageSize)
                         }
@@ -58,21 +57,22 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
     }
 
     private fun initRecycler(){
-        layoutManager = LinearLayoutManager(this);
-        adapter = SuperHerosAdapter(herosList, this)
+        layoutManager = LinearLayoutManager(this)
+        adapter = SuperHeroesAdapter(herosList, this)
         binding.rvSuperhero.layoutManager = layoutManager
         binding.rvSuperhero.adapter = adapter
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun updateRecycler(superheros: List<SuperheroModel>){
         herosList.addAll(superheros)
         adapter.notifyDataSetChanged()
         isBusy = false
     }
 
-    override fun onItemClickListener(superhero: SuperheroModel) {
+    override fun onItemClickListener(data: SuperheroModel) {
         val intent = Intent(this, Superhero::class.java)
-        intent.putExtra("data", superhero as Serializable)
+        intent.putExtra("data", data as Serializable)
         startActivity(intent)
     }
 }

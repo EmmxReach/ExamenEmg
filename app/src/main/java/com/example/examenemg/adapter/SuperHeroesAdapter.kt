@@ -10,14 +10,14 @@ import com.example.examenemg.interfaces.ItemClickListener
 import com.example.examenemg.model.SuperheroModel
 import com.squareup.picasso.Picasso
 
-class SuperHerosAdapter(private val superheros: List<SuperheroModel>, private val itemClickListener: ItemClickListener): RecyclerView.Adapter<SuperHerosAdapter.SuperherosHolder>() {
+class SuperHeroesAdapter(private val superheros: List<SuperheroModel>, private val itemClickListener: ItemClickListener): RecyclerView.Adapter<SuperHeroesAdapter.SuperherosHolder>() {
 
     class SuperherosHolder(view: View): RecyclerView.ViewHolder(view) {
 
         private val binding = ItemSuperheroBinding.bind(view)
         fun render(superheroModel: SuperheroModel){
             binding.tvnameSuperhero.text = superheroModel.name
-            Picasso.get().load(superheroModel.image?.url ?: "").into(binding.ivSuperhero)
+            Picasso.get().load(superheroModel.image.url).into(binding.ivSuperhero)
         }
     }
 
@@ -27,13 +27,13 @@ class SuperHerosAdapter(private val superheros: List<SuperheroModel>, private va
     }
 
     override fun onBindViewHolder(holder: SuperherosHolder, position: Int) {
-        val superhero = superheros[position];
-        holder.render(superhero);
+        val superhero = superheros[position]
+        holder.render(superhero)
         holder.itemView.setOnClickListener{
-            itemClickListener.onItemClickListener(superhero);
+            itemClickListener.onItemClickListener(superhero)
         }
     }
 
-    override fun getItemCount(): Int = superheros.size;
+    override fun getItemCount(): Int = superheros.size
 
 }

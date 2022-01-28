@@ -1,12 +1,9 @@
 package com.example.examenemg.view
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import androidx.activity.viewModels
-import com.example.examenemg.R
 import com.example.examenemg.databinding.ActivitySuperheroBinding
+import com.example.examenemg.helpers.HtmlHelper
 import com.example.examenemg.model.SuperheroModel
 import com.example.examenemg.viewmodel.InfoSuperheroViewModel
 import com.squareup.picasso.Picasso
@@ -22,20 +19,20 @@ class Superhero : AppCompatActivity() {
         superhero = getExtrasSuperhero()
         binding = ActivitySuperheroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        infoSuperheroModel.onCreate(superhero);
+        infoSuperheroModel.onCreate(superhero)
         infoSuperheroModel.superhero.observe(this, { data -> loadUI(data) })
     }
 
-    fun loadUI(superheroModel: SuperheroModel){
+    private fun loadUI(superheroModel: SuperheroModel){
 
         val actionbar = supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
         actionbar?.setDisplayHomeAsUpEnabled(true)
 
         Picasso.get().load(superheroModel.image.url).into(binding.ivPhotoSuperhero)
-        binding.identifier.text = Html.fromHtml("<b>Identifier:</b> ${superheroModel.id}")
-        binding.tvfullNameInfo.text = Html.fromHtml("<b>Full Name:</b> ${superheroModel.biography.full_name}")
-        binding.tvnameInfo.text = Html.fromHtml("<b>Name:</b> ${superheroModel.name}")
+        binding.identifier.text = HtmlHelper.castSource("<b>Identifier:</b> ${superheroModel.id}")
+        binding.tvfullNameInfo.text = HtmlHelper.castSource("<b>Full Name:</b> ${superheroModel.biography.full_name}")
+        binding.tvnameInfo.text = HtmlHelper.castSource("<b>Name:</b> ${superheroModel.name}")
 
         binding.tvfn.text = superheroModel.biography.full_name
         binding.tvEgos.text = superheroModel.biography.alter_egos
@@ -55,7 +52,7 @@ class Superhero : AppCompatActivity() {
         binding.tvRelatives.text = superheroModel.connections.relatives
     }
 
-    fun getExtrasSuperhero(): SuperheroModel = intent.getSerializableExtra("data") as SuperheroModel
+    private fun getExtrasSuperhero(): SuperheroModel = intent.getSerializableExtra("data") as SuperheroModel
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
